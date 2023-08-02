@@ -16,11 +16,15 @@ background = PhotoImage(file="images/card_front.png")
 canvas.create_image(450, 300, image=background)
 french_start_text = canvas.create_text(450, 150, text="French", font=("Ariel", 35, "italic"))
 french_word_start = canvas.create_text(450, 285, text="trouve", font=("Ariel", 50, "bold"))
-canvas.grid(column=1, row=0, columnspan=1)
+canvas.grid(column=0, row=0, columnspan=2)
 
 # X [marks the spot] and checkmark button
 x = PhotoImage(file="images/wrong.png")
-x_button = Button(window, image=x, borderwidth=0)
-x_button.grid(column=0, row=1, columnspan=2)
+x_button = Button(window, image=x, borderwidth=0, highlightthickness=0)
+x_button.grid(column=0, row=1)
+
+checkmark = PhotoImage(file="images/right.png")
+checkmark_button = Button(window,image=checkmark, borderwidth=0, highlightthickness=0)
+checkmark_button.grid(column=1, row=1, columnspan=1)
 
 window.mainloop()
